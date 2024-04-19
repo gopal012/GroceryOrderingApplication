@@ -1,0 +1,57 @@
+<div class="container w-50 bg-color mt-5">
+    <div class="d-flex justify-content-center pt-4">
+        <img src={{imageurl}}>
+    </div>
+    <div class="d-flex justify-content-evenly p-4">
+        <div class="w-25 d-flex flex-column align-items-center">
+            <div class="font-bold">{{productname}}</div>
+            <div class="font-bold">MRP - <span class="lineabove"><i class="bi bi-currency-rupee"></i>{{price}}</span></div>
+            <div class="font-weight-light text-danger">Flat {{discount}}<i class="bi bi-percent"></i> off</div>
+            <div class="font-bold text-success"><i class="bi bi-currency-rupee"></i>{{sellprice}}</div>
+        </div>
+        <ng-container>
+            <div *ngIf="pquantity>0" class="w-25 d-flex justify-content-around">
+                <div class="d-flex flex-column justify-content-evenly" *ngIf="returnValue == 'true'">
+                    <div id="quantity">
+                        <button type="button" (click)="plus()"><i class="bi bi-plus"></i></button>
+                        <input type="text" [value]="quantity">
+                        <button type="button" (click)="minus()"><i class="bi bi-dash"></i></button>       
+                    </div>
+                    <div>
+                        <button class="cart px-3" type="button" (click)="GoToCart()">View Cart</button>
+                    </div>
+                </div>
+                <div *ngIf="returnValue == 'false'">
+                    <button class="cart px-3" type="button" (click)="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+            <div *ngIf="pquantity <=0" class="d-flex flex-column">
+                <span class="text-danger mb-2">Out Of Stock</span>
+                <button id="notify" type="button">Notify Me</button>
+            </div>
+        </ng-container>
+    </div>
+    <div>
+        <div class="d-flex flex-column align-items-center justify-content-center p-3">
+            <h4>Review this product</h4>
+            <ngb-rating [max]="5" (click)="getRating()" [formControl]="ratingControl"></ngb-rating>
+            <input id="review" type="text" placeholder="Add Review for the Product" [(ngModel)]='reviewString'>
+        </div>
+        <div class="d-flex justify-content-center p-3">
+            <button type="submit" class="btn btn-primary" (click)="AddReview()">Submit</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="productReviews.length>0" class="reviews container w-50 d-flex flex-column align-items-center">
+    <h4>Ratings & Reviews</h4>
+    <ngb-rating [rate]="finalRating"  [readonly]="true" [max]="5"></ngb-rating>
+    <h5>{{finalRating}} - Rating from {{ratingCount}} users</h5>
+    <ul *ngFor="let reviews of productReviews">
+        <li>
+            <strong>
+                {{reviews.userName}}
+            </strong>
+            - "{{reviews.review}}"
+        </li>
+    </ul>
+</div>

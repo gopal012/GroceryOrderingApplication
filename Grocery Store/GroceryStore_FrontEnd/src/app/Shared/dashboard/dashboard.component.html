@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-around m-3">
+    <div class="w-25">
+        <select name="category" [(ngModel)]="categoryValue" id="category" (click)="selectCategory()">
+          <option value="" selected>All Products</option>
+          <option value="cookingEssential">Cooking Essential</option>
+          <option value="Food&Beverages">Food & Beverages</option>
+          <option value="cleaningEssential">Cleaning Essentials</option>
+          <option value="beautyEssential">Beauty Essentials</option>
+          <option value="healthCare">HealthCare</option>
+        </select>
+    </div>
+    <div class="w-50" id="search-div">
+      <span><i class="bi bi-search m-2"></i></span>
+      <input id="search" type="search" [(ngModel)]="searchKey" placeholder="Search Product">
+    </div>
+  </div>
+  <table class="table container">
+    <thead>
+      <tr class="text-center">
+        <th class="cursor" (click)="sortName()">Product<i class="bi bi-arrow-down-up ms-2"></i></th>
+        <th >Description</th>
+        <th class="cursor" (click)="sortPrice()">Price<i class="bi bi-arrow-down-up ms-2"></i></th>
+        <th >Image</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr  class="text-center" *ngFor="let product of filterProducts  | filter:searchKey:'productName' | paginate:{itemsPerPage:5, currentPage:page };">
+          <td><a routerLink="description" [queryParams]={id:this.userId,productId:product.id,name:this.userName}>{{product.productName}}</a></td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+          <td><img [src]="product.imageUrl"></td>
+        </tr>
+      </tbody>
+</table>
+<div class="d-flex justify-content-center">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+

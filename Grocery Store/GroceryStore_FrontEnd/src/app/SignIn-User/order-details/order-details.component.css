@@ -1,0 +1,19 @@
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.main{
+    width: 40vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.total{
+    width: 40vw;
+    font-size: 2vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+}

@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center"> 
+                    <h1>Register</h1> 
+                </div>
+                <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                    <div class="mb-3">
+                        <label for="InputName" class="form-label">
+                            Full Name
+                        </label>
+                        <input formControlName="fullName" 
+                               [ngClass]="{'is-invalid':signUpForm.controls['fullName'].errors && signUpForm.controls['fullName'].touched}" 
+                               type="text" 
+                               class="form-control">
+                        <div *ngIf="signUpForm.controls['fullName'].errors && signUpForm.controls['fullName'].touched" class="text-danger">
+                            <small *ngIf="signUpForm.controls['fullName'].errors['required']">
+                                Name is Required
+                            </small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="InputEmail1" class="form-label">
+                        Email address
+                      </label>
+                      <input formControlName="email" 
+                             [ngClass]="{'is-invalid':signUpForm.controls['email'].errors && signUpForm.controls['email'].touched}" 
+                             type="email" 
+                             class="form-control">
+                      <div *ngIf="signUpForm.controls['email'].errors  && signUpForm.controls['email'].touched" class="text-danger">
+                        <small *ngIf="signUpForm.controls['email'].errors['required']">
+                            Email is Required
+                        </small>
+                        <small *ngIf="signUpForm.controls['email'].errors['email']">
+                            Enter Valid Email-Id
+                        </small>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputEmail1" class="form-label">
+                          Phone Number
+                        </label>
+                        <input formControlName="phoneNumber" 
+                               [ngClass]="{'is-invalid':signUpForm.controls['phoneNumber'].errors && signUpForm.controls['phoneNumber'].touched}" 
+                               type="text" 
+                               class="form-control">
+                        <div *ngIf="signUpForm.controls['phoneNumber'].errors  && signUpForm.controls['phoneNumber'].touched" class="text-danger">
+                          <small *ngIf="signUpForm.controls['phoneNumber'].errors['required']">
+                            Phone Number is Required
+                          </small>
+                          <small *ngIf="signUpForm.controls['phoneNumber'].errors['pattern']">
+                              Enter Valid Phone Number
+                          </small>
+                        </div>
+                      </div>
+                    <div class="mb-3">
+                      <label for="InputPassword1" class="form-label">
+                        Password
+                      </label>
+                      <input formControlName="password" 
+                             [ngClass]="{'is-invalid':signUpForm.controls['password'].errors && signUpForm.controls['password'].touched}" 
+                             type="password" 
+                             class="form-control">
+                      <div *ngIf="signUpForm.controls['password'].errors  && signUpForm.controls['password'].touched" class="text-danger">
+                        <small *ngIf="signUpForm.controls['password'].errors['required']">
+                            Password is Required.
+                        </small>
+                        <small *ngIf="signUpForm.controls['password'].errors['minlength']">
+                            Minimum Length must be of 8 Letters.
+                        </small>
+                        <small *ngIf="signUpForm.controls['password'].errors['pattern']">
+                            Minimum Length must be of 10 Letters.
+                        </small>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">
+                            Confirm Password
+                        </label>
+                        <input formControlName="confirmPassword" 
+                               [ngClass]="{'is-invalid':signUpForm.controls['confirmPassword'].errors  && signUpForm.controls['confirmPassword'].touched}" 
+                               type="password" 
+                               class="form-control">
+                        <div *ngIf="signUpForm.controls['confirmPassword'].errors  && signUpForm.controls['confirmPassword'].touched" class="text-danger">
+                            <small *ngIf="signUpForm.controls['confirmPassword'].errors['required']">
+                                Password is Required
+                            </small>
+                            <small *ngIf="signUpForm.controls['confirmPassword'].errors['minlength']">
+                                Minimum Length must be of 8 Letters
+                            </small>
+                        </div>
+                        <div *ngIf="signUpForm.invalid  && signUpForm.controls['confirmPassword'].touched" class="text-danger">
+                            <small *ngIf="signUpForm.invalid">
+                                Password and Confirm password doesn't match
+                            </small>
+                        </div>
+                    </div>
+                    <button type="submit" [disabled]="signUpForm.invalid" class="btn btn-success mb-2">
+                        Register
+                    </button>
+                </form>
+                <a routerLink="/home/login">Already Registered? Click Here To Login</a>
+            </div>
+        </div> 
+    </div>
+</div>
+

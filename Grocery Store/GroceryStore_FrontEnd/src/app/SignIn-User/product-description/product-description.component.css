@@ -1,0 +1,66 @@
+.container{
+    box-shadow: -3px 3px 15px black;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+}
+.bg-color{
+    background-color: rgb(249, 244, 244);
+}
+
+.reviews{
+    background-color: rgb(249, 244, 244);
+}
+
+img{
+    width: 15vw;
+    height: 30vh;
+}
+
+#quantity button,#quantity input{
+    border: none;
+    background-color: transparent;
+}
+
+#quantity input{
+    width: 2vw;
+    text-align: center;
+    
+}
+
+#quantity{
+    width: 7vw;
+    height: 5vh;
+    border: 1px solid black;
+    border-radius: 40px;
+}
+
+.font-bold{
+    font-weight: bolder;
+}
+
+.cart{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+
+#notify{
+    background-color: black;
+    color: white;
+}
+
+#review{
+    width: 75%;
+    text-align: center;
+    padding: 3%;
+}
+
+.lineabove{
+    text-decoration: line-through;
+}
+
+ngb-rating{
+    color: rgb(255, 217, 0);
+    font-size: 50px;
+}

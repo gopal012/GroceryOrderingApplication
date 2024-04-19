@@ -1,0 +1,63 @@
+.card{
+    height: 60vh;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+#emptyCart{
+    width: 40%;
+    height: 40%;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    margin-right: 1vw;
+}
+
+.main{
+    width: 50vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+}
+
+#quantity{
+    align-items: end;
+}
+
+#quantity input{
+    border: none;
+    background-color: transparent;
+    width: 4vw;
+    text-align: center;
+}
+
+#quantity button{
+    border-radius: 50%;
+    border:1px solid black
+}
+
+#plus{
+    background-color: black;
+    color: white;
+}
+
+#minus{
+    background-color: white;
+    color: black;
+}
+
+.total{
+    width: 50vw;
+    font-size: 2vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}

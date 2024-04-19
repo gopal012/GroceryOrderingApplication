@@ -1,0 +1,32 @@
+<ng-container *ngIf="orderList.length>0">
+    <div class="d-flex justify-content-center" *ngFor="let orders of orderList;">
+        <div class="container w-75 d-flex justify-content-around align-items-center m-3 p-3">
+            <div class="d-flex">
+                <div>
+                    <img id='orderCart' src="https://img.uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/order-placed-purchased-icon.png" alt="Error">
+                </div>
+                <div class="d-flex flex-column justify-content-evenly ps-5">
+                    <span><strong>Order Id - {{orders.orderId}}</strong></span>
+                    <span>{{orders.totalItems}} Items</span>
+                    <span class="cursor text-primary" (click)="details(orders.orderId)">Order Details</span>
+                </div>
+
+            </div>
+            <div class="end">
+                Order Placed <i class="bi bi-patch-check-fill text-success"></i>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="orderList.length==0">
+    <div class="container">
+        <div class="card m-5 p-4">
+            <h5 class="card-title">My Orders</h5>
+        </div>
+        <div class="center">
+            <h4>No Orders Placed !!</h4>
+            <h6>Add Item to Cart to place order</h6>
+            <button class="btn btn-primary" (click)="orderNow()">Order Now</button>
+        </div>
+    </div>
+</ng-container>

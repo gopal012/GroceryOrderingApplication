@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="mb-3">
+                      <label for="InputEmail1" class="form-label">
+                        Email address
+                      </label>
+                      <input formControlName="email" 
+                             [ngClass]="{'is-invalid':loginForm.controls['email'].errors && loginForm.controls['email'].touched}" 
+                             type="email" 
+                             class="form-control">
+                      <div *ngIf="loginForm.controls['email'].errors  && loginForm.controls['email'].touched" class="text-danger">
+                        <small *ngIf="loginForm.controls['email'].errors['required']">
+                            Email is Required
+                        </small>
+                        <small *ngIf="loginForm.controls['email'].errors['email']">
+                            Enter Valid Email-Id
+                        </small>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="InputPassword1" class="form-label">
+                        Password
+                      </label>
+                      <input formControlName="password" 
+                             [ngClass]="{'is-invalid':loginForm.controls['password'].errors && loginForm.controls['password'].touched}" 
+                             type="password" 
+                             class="form-control" >
+                      <div *ngIf="loginForm.controls['password'].errors  && loginForm.controls['password'].touched" class="text-danger">
+                        <small *ngIf="loginForm.controls['password'].errors['required']">
+                            Password is Required
+                        </small>
+                      </div>
+                    </div>
+                    <div id="forget" class="form-inline fr mt-0 mb-2"><a data-toggle="modal" data-target="#exampleModal" class="font-weight-bold">Forget Password?</a></div>
+                    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success mb-2">
+                        Login
+                    </button>
+                </form>
+                <a routerLink="/home/signup">New User? Click Here To Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title" id="exampleModalLabel"><span style="font-size: 25px; font-weight: bolder;">Forget Your Password?</span><br>
+          <small>Please Provide your Email-Id. We will Send you the reset Link</small></p>
+      </div>
+      <div class="modal-body">
+        <div class="form-group pt-3">
+          <div class="input-field border">
+            <i class="fa fa-user p-2"></i><input type="email" [(ngModel)]="resetPasswordEmail" (ngModelChange)="checkValidEmail($event)" placeholder="Email">
+          </div>
+          <small *ngIf="!resetPasswordEmail" class="text-danger">*Email is Required</small>
+          <small *ngIf="!isValidEmail && resetPasswordEmail" class="text-danger">*Email is Invalid</small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" (click)="confirmToSend()" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+

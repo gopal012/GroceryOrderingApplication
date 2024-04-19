@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroceryStore_Backend", "GroceryStore_Backend\GroceryStore_Backend.csproj", "{4E3CA3BE-63DE-4BDE-9A2E-F9EED10EF2BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DOL", "DOL\DOL.csproj", "{4C6F481F-210A-4E1F-AFF6-24F7E3101884}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{EAD68FF4-4290-43A7-B525-389117734270}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E3CA3BE-63DE-4BDE-9A2E-F9EED10EF2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3CA3BE-63DE-4BDE-9A2E-F9EED10EF2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3CA3BE-63DE-4BDE-9A2E-F9EED10EF2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3CA3BE-63DE-4BDE-9A2E-F9EED10EF2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6F481F-210A-4E1F-AFF6-24F7E3101884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6F481F-210A-4E1F-AFF6-24F7E3101884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6F481F-210A-4E1F-AFF6-24F7E3101884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6F481F-210A-4E1F-AFF6-24F7E3101884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD68FF4-4290-43A7-B525-389117734270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD68FF4-4290-43A7-B525-389117734270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD68FF4-4290-43A7-B525-389117734270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD68FF4-4290-43A7-B525-389117734270}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {492C8219-F191-425F-90E9-360EF2116151}
+	EndGlobalSection
+EndGlobal
